@@ -23,7 +23,7 @@ public class TestBase {
 	}
 	
 
-	public void intilization() {
+	public static void intilization() {
 		String browserName = prop.getProperty("browsername");
 		if(browserName.equals("chrome")) {
 			driver = new ChromeDriver();

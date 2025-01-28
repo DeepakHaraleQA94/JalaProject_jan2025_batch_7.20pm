@@ -14,14 +14,44 @@ public class LoginPage extends TestBase {
 	//homePage = geetha
 	//createemployee page = siva
 	// srearch page = shubham
-	@FindBy(id ="UserName")
+
+	@FindBy(id = "UserName")
 	WebElement username;
 	
-	public LoginPage() throws IOException{
-		PageFactory.initElements(driver, this);
-		}
+	@FindBy(id = "Password")
+	WebElement password;
 	
-	public void enterUsername() {
-		username.sendKeys("xyz");
+	@FindBy(id = "btnLogin")
+	WebElement loginBtn;
+	
+	@FindBy(xpath = "//h5[contains (text(),' Email ')]")
+	WebElement email;
+	
+	@FindBy(xpath = "//h5[contains (text(),' Password ')]")
+	WebElement pass;
+	
+	public LoginPage() throws IOException {
+	
+		PageFactory.initElements(driver, this);
 	}
+	
+	
+	public void enterUsername(String uname) {
+		username.sendKeys(uname);
 	}
+	
+	public void enterPassword(String pass) {
+		password.sendKeys(pass);
+	}
+	
+	public void clickOnLoginBtn() {
+		loginBtn.click();
+	}
+
+public String getEmail() {
+	String emailText = email.getText();
+	return emailText;
+}
+
+	
+}

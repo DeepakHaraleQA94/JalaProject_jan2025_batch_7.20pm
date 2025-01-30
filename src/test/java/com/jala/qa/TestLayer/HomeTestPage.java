@@ -28,7 +28,7 @@ public class HomeTestPage  extends TestBase{
 	
 	@Test
 	public void validateHomePage() {
-//		home.clickOnCreateTab();
+		home.clickOnCreateTab();
 	}
 
 }

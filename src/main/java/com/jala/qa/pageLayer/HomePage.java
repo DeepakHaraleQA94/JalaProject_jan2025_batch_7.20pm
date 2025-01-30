@@ -141,5 +141,5 @@ public void clickOnIFramesTab() {
 public void clickOnSettingsTab() {
     settingsTab.click();
 }
->>>>>>> 591f2f252ae76b30af324d43f44034dc0826bebe
+
 }

@@ -1,4 +1,4 @@
-package project_qa_pageLayer;
+package com.jala.qa.pageLayer;
 
 import java.io.IOException;
 
@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import projece_qa_parentLayer.TestBase;
-
-public class HomePage extends TestBase {
+public class HomePage extends com.jala.qa.parentLayer.TestBase {
 	WebDriver driver;
 	@FindBy(xpath = "//h1[text()='Welcome to JALA Academy']")
 	WebElement homeText;
@@ -143,4 +141,5 @@ public void clickOnIFramesTab() {
 public void clickOnSettingsTab() {
     settingsTab.click();
 }
+>>>>>>> 591f2f252ae76b30af324d43f44034dc0826bebe
 }

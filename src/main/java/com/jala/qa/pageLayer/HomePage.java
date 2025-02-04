@@ -7,7 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends com.jala.qa.parentLayer.TestBase {
+import com.jala.qa.parentLayer.TestBase;
+
+public class HomePage extends TestBase {
+
+	public HomePage() throws IOException {
+		super();
+	PageFactory.initElements(driver, this);
+	}
 	WebDriver driver;
 	@FindBy(xpath = "//h1[text()='Welcome to JALA Academy']")
 	WebElement homeText;
@@ -71,12 +78,11 @@ public class HomePage extends com.jala.qa.parentLayer.TestBase {
 	WebElement  settingsTab;
 	
 
-public HomePage()throws IOException {
-	PageFactory.initElements(driver, this);
-}
-public boolean validateHomeText() {
+
+public String validateHomeText() {
+	String test = homeText.getText();
 	boolean text = homeText.isDisplayed();
-	return text;
+	return test;
 }
 public void clickOnLogOutBtn() {
 	logOutBtn.click();

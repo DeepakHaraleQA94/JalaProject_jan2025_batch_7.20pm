@@ -30,6 +30,9 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//h5[contains (text(),' Password ')]")
 	WebElement pass;
 	
+	@FindBy(xpath = "//div/h5/following-sibling::h5")
+	WebElement passText;
+	
 	public LoginPage() throws IOException {
 	
 		PageFactory.initElements(driver, this);

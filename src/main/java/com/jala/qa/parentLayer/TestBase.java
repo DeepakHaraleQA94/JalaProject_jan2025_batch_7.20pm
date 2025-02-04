@@ -16,9 +16,11 @@ import com.google.common.annotations.VisibleForTesting;
 public class TestBase {
 	public static  Properties prop;
 	public static WebDriver driver;
+	public static String path ="C:\\Users\\Sarvadnya\\eclipse-workspace\\HybrideFramework_Jan2025\\JalaProject_jan2025_batch_7.20pm\\src\\main\\java\\com\\jala\\qa\\enviromentLayer\\Config.properties";
 	public  TestBase() throws IOException{
+		
 		 prop = new Properties();
-		FileInputStream file = new FileInputStream("C:\\Users\\Sarvadnya\\eclipse-workspace\\HybrideFramework_Jan2025\\src\\main\\java\\com\\jala\\qa\\enviromentLayer\\Config.properties");
+		FileInputStream file = new FileInputStream(path);
 		prop.load(file);
 	}
 	

@@ -3,9 +3,15 @@ package com.jala.qa.Utility;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.security.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,6 +19,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.jala.qa.pageLayer.LoginPage;
 import com.jala.qa.parentLayer.TestBase;
+
+import net.bytebuddy.utility.RandomString;
 
 public class Utility extends TestBase {
 	String excelpath1 ="‪C:\\Users\\Sarvadnya\\OneDrive\\Desktop\\SignUp.xlsx";
@@ -75,5 +83,21 @@ public static ExtentReports getExtentReport() {
 	return report;
 	
 }
+
+//***************************************** screnshot ******************************
+
+
+public void screenshot(String MethodName) throws IOException {
+	File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	 System.out.println(src);
+	 String timestamp = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ss").format(new Date());
+	 String random = RandomString.make(2);		 
+//	 File des1 = new File( System.getProperty("user.dir")+ "\\screenshot\\"+random+".png"); 
+	 File des = new File("C:\\Users\\Sarvadnya\\eclipse-workspace\\HybrideFramework_Jan2025\\JalaProject_jan2025_batch_7.20pm\\screnshot1\\"+MethodName+timestamp+".png");
+	 FileHandler.copy(src, des);
+
+		
+}
+
 
 }

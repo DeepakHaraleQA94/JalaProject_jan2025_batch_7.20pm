@@ -43,7 +43,7 @@ public class LoginTestPage extends TestBase{
 	}
 	
 	
-	@Test(dataProvider = "test1")
+	@Test(dataProvider = "test1", enabled = true)
 	public void getLoginData(String uname, String pass) throws InterruptedException {
 		login.enterUsername(uname);
 		login.enterPassword(pass);
@@ -59,7 +59,7 @@ public class LoginTestPage extends TestBase{
 	
 	
 	
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void validateLoginpage() throws IOException, InterruptedException {
 		
 		String getMailtext = login.getEmail();
@@ -78,8 +78,9 @@ public class LoginTestPage extends TestBase{
 	Thread.sleep(3000);
 		String actual = driver.getCurrentUrl();
 		
-		Assert.assertEquals(actual, "https://magnus.jalatechnologies.com/Home/Index");
-		Reporter.log("Home Page url matched successfully...",true);
+		Assert.fail();
+//		Assert.assertEquals(actual, "https://magnus.jalatechnologies.com/Home/Index");
+//		Reporter.log("Home Page url matched successfully...",true);
 		
 	}
 	

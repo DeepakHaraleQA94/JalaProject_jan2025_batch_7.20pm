@@ -14,7 +14,7 @@ import com.jala.qa.parentLayer.TestBase;
 
 
 public class listnerClass  extends TestBase implements ITestListener{
-
+	Utility util = new Utility();
 	ExtentReports report = Utility.getExtentReport();
 	ExtentTest eTest;
 	
@@ -50,17 +50,19 @@ public class listnerClass  extends TestBase implements ITestListener{
 	  }
 	
 	public void onTestFailure(ITestResult result) {
+	
 	    System.out.println("Test case method execution failed..."+ result.getMethod().getMethodName());
 	    String testName = result.getName();
 		eTest.log(Status.FAIL,testName+" got failed");
 	    
-//	    try {
-//			screnshot1.screenshot();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	  
+		try {
+			util.screenshot(testName);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+  
 	  }
 	
 	public void onTestSkipped(ITestResult result) {
